@@ -26,7 +26,7 @@ export function convertPrice(amount, toCurrency = 'USD') {
 export function formatPrice(amount, currencyCode = 'USD') {
   const converted = convertPrice(amount, currencyCode);
   if (currencyCode === 'USD') {
-    return `USD ${converted.toFixed(2)}`;
+    return `$${converted.toFixed(2)}`;
   }
   if (currencyCode === 'EUR') {
     return `€ ${converted.toFixed(2)}`;
