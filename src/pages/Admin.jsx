@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Download, Plus, Trash2, ChevronDown, ChevronUp, Save, GripVertical, Github, Loader2, LogOut, Archive, Image as ImageIcon, Package, Upload } from 'lucide-react';
+import { Download, Plus, Trash2, ChevronDown, ChevronUp, Save, GripVertical, Github, Loader2, LogOut, Archive, Image as ImageIcon, Package, Upload, Search, Copy } from 'lucide-react';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
@@ -267,7 +267,37 @@ export default function Admin() {
   
   const [fileSha, setFileSha] = useState('');
   const [products, setProducts] = useState([]);
+  const [originalProducts, setOriginalProducts] = useState([]);
   const [editingIndex, setEditingIndex] = useState(null);
+  const [adminSearch, setAdminSearch] = useState('');
+  const [showPublishModal, setShowPublishModal] = useState(false);
+
+  const filteredAdminProducts = products.filter(p => 
+    p.name?.toLowerCase().includes(adminSearch.toLowerCase()) || 
+    p.category?.toLowerCase().includes(adminSearch.toLowerCase()) ||
+    p.id === adminSearch
+  );
+
+  const organizeProducts = (list) => {
+    const activeInStock = [];
+    const activeOutStock = [];
+    const inactive = [];
+
+    list.forEach(p => {
+      if (p.visible === false) {
+        inactive.push(p);
+      } else if (p.stock_status === 'out_of_stock') {
+        activeOutStock.push(p);
+      } else {
+        activeInStock.push(p);
+      }
+    });
+
+    return [...activeInStock, ...activeOutStock, ...inactive].map((p, i) => ({
+      ...p,
+      id: (i + 1).toString()
+    }));
+  };
 
   // Automatically try to login if credentials are in localStorage
   useEffect(() => {
@@ -299,7 +329,9 @@ export default function Admin() {
       const decodedContent = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
       const json = JSON.parse(decodedContent);
       
-      setProducts(json);
+      const organized = organizeProducts(json);
+      setProducts(organized);
+      setOriginalProducts(JSON.parse(JSON.stringify(organized)));
       setIsAuthenticated(true);
       localStorage.setItem('github_pat', pat);
 
@@ -360,6 +392,7 @@ export default function Admin() {
   };
 
   const saveToGitHub = async () => {
+    setShowPublishModal(false);
     setIsSaving(true);
     try {
       const content = btoa(unescape(encodeURIComponent(JSON.stringify(products, null, 2))));
@@ -419,6 +452,7 @@ export default function Admin() {
       }
 
       setLastSaved(new Date().toLocaleString());
+      setOriginalProducts(JSON.parse(JSON.stringify(products)));
       alert('Successfully saved to GitHub!');
     } catch (err) {
       alert(err.message);
@@ -485,8 +519,12 @@ export default function Admin() {
   const addNewProduct = () => {
     const newId = products.length > 0 ? Math.max(...products.map(p => parseInt(p.id) || 0)) + 1 : 1;
     const newProduct = { ...emptyProduct, id: newId.toString() };
-    setProducts([...products, newProduct]);
-    setEditingIndex(products.length);
+    const updatedProducts = [newProduct, ...products].map((p, i) => ({
+      ...p,
+      id: (i + 1).toString()
+    }));
+    setProducts(updatedProducts);
+    setEditingIndex(0);
   };
 
   const removeProduct = (index) => {
@@ -506,6 +544,25 @@ export default function Admin() {
     }
   };
 
+  const duplicateProduct = (index) => {
+    const productToCopy = products[index];
+    const newId = products.length > 0 ? Math.max(...products.map(p => parseInt(p.id) || 0)) + 1 : 1;
+    const newProduct = { 
+      ...productToCopy, 
+      id: newId.toString(),
+      name: `${productToCopy.name} (Copy)`,
+      slug: productToCopy.slug ? `${productToCopy.slug}-copy` : ''
+    };
+    const updatedProducts = [...products];
+    updatedProducts.splice(index + 1, 0, newProduct);
+    const reindexedProducts = updatedProducts.map((p, i) => ({
+      ...p,
+      id: (i + 1).toString()
+    }));
+    setProducts(reindexedProducts);
+    setEditingIndex(index + 1);
+  };
+
   const updateProduct = (index, fieldPath, value) => {
     const newProducts = [...products];
     const pathParts = fieldPath.split('.');
@@ -513,6 +570,10 @@ export default function Admin() {
     if (pathParts.length === 1) {
       if (fieldPath === 'visible') value = value === 'true' || value === true;
       newProducts[index][fieldPath] = value;
+      
+      if (fieldPath === 'name' && !newProducts[index].slug) {
+        newProducts[index].slug = value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      }
     } else if (pathParts.length === 2) {
       if (!newProducts[index][pathParts[0]]) newProducts[index][pathParts[0]] = {};
       if (pathParts[1] === 'amount') value = value === '' ? '' : (parseFloat(value) || 0);
@@ -526,7 +587,17 @@ export default function Admin() {
         newProducts[index].saved_amount.amount = diff > 0 ? parseFloat(diff.toFixed(2)) : 0;
       }
     }
-    setProducts(newProducts);
+
+    if (fieldPath === 'stock_status' || fieldPath === 'visible') {
+      const targetSlug = newProducts[index].slug;
+      const targetName = newProducts[index].name;
+      const resorted = organizeProducts(newProducts);
+      const newIdx = resorted.findIndex(p => p.slug === targetSlug && p.name === targetName);
+      setProducts(resorted);
+      if (newIdx !== -1) setEditingIndex(newIdx);
+    } else {
+      setProducts(newProducts);
+    }
   };
 
   if (!isAuthenticated) {
@@ -571,8 +642,133 @@ export default function Admin() {
     );
   }
 
+  const getChanges = () => {
+    const changes = [];
+    const originalMap = new Map();
+    originalProducts.forEach(p => originalMap.set(p.slug || p.name || p.id, p));
+    
+    const currentMap = new Map();
+    products.forEach(p => currentMap.set(p.slug || p.name || p.id, p));
+
+    products.forEach(currentP => {
+      const key = currentP.slug || currentP.name || currentP.id;
+      const originalP = originalMap.get(key);
+      
+      if (!originalP) {
+        changes.push({ type: 'added', name: currentP.name || 'Unnamed Product' });
+      } else {
+        const diffs = [];
+        if (currentP.our_price?.amount !== originalP.our_price?.amount) diffs.push('Price');
+        if (currentP.stock_status !== originalP.stock_status) diffs.push('Stock');
+        if (currentP.visible !== originalP.visible) diffs.push(currentP.visible ? 'Unhidden' : 'Hidden');
+        if (currentP.plan !== originalP.plan) diffs.push('Plan');
+        if (currentP.category !== originalP.category) diffs.push('Category');
+        if (currentP.image !== originalP.image) diffs.push('Image');
+        if (currentP.status !== originalP.status) diffs.push('Badge');
+        
+        if (diffs.length > 0) {
+          changes.push({ type: 'modified', name: currentP.name || 'Unnamed Product', details: diffs.join(', ') });
+        }
+      }
+    });
+
+    originalProducts.forEach(originalP => {
+      const key = originalP.slug || originalP.name || originalP.id;
+      if (!currentMap.has(key)) {
+        changes.push({ type: 'removed', name: originalP.name || 'Unnamed Product' });
+      }
+    });
+
+    return changes;
+  };
+
+  const pendingChanges = getChanges();
+
   return (
-    <div className="max-w-4xl mx-auto p-4 sm:p-6 pb-24">
+    <div className="max-w-4xl mx-auto p-4 sm:p-6 pb-24 relative">
+      {showPublishModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl shadow-xl w-full max-w-md overflow-hidden animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[90vh]">
+            <div className="p-6 overflow-y-auto">
+              <h2 className="text-xl font-bold text-slate-800 mb-2">Publish Changes?</h2>
+              <p className="text-slate-500 text-sm mb-6">
+                You are about to save the current products to GitHub. This will update the live website.
+              </p>
+              
+              {pendingChanges.length > 0 ? (
+                <div className="mb-6 space-y-3">
+                  <h3 className="text-sm font-bold text-slate-700 uppercase tracking-wider mb-2">Recent Changes</h3>
+                  <div className="space-y-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar">
+                    {pendingChanges.map((change, i) => (
+                      <div key={i} className="flex items-start gap-2 text-sm bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        {change.type === 'added' && <span className="text-emerald-500 font-bold shrink-0 mt-0.5">+</span>}
+                        {change.type === 'removed' && <span className="text-red-500 font-bold shrink-0 mt-0.5">-</span>}
+                        {change.type === 'modified' && <span className="text-amber-500 font-bold shrink-0 mt-0.5">~</span>}
+                        <div>
+                          <span className="font-medium text-slate-800">{change.name}</span>
+                          {change.type === 'added' && <span className="text-slate-500 ml-1">(Added)</span>}
+                          {change.type === 'removed' && <span className="text-slate-500 ml-1">(Removed)</span>}
+                          {change.type === 'modified' && <span className="text-slate-500 block text-xs mt-0.5">Changed: {change.details}</span>}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="bg-slate-50 border border-slate-100 rounded-xl p-4 text-center mb-6 text-sm text-slate-500">
+                  No products were changed since last save.
+                </div>
+              )}
+              
+              <div className="bg-slate-50 rounded-2xl p-5 mb-6 space-y-3 border border-slate-100">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-slate-600 font-medium">Total Products</span>
+                  <span className="font-bold text-slate-800">{products.length}</span>
+                </div>
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-slate-600">Active & In Stock</span>
+                  <span className="font-semibold text-brand-600">
+                    {products.filter(p => p.visible !== false && p.stock_status !== 'out_of_stock').length}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-slate-600">Out of Stock</span>
+                  <span className="font-semibold text-amber-600">
+                    {products.filter(p => p.stock_status === 'out_of_stock' && p.visible !== false).length}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-slate-600">Hidden / Inactive</span>
+                  <span className="font-semibold text-slate-400">
+                    {products.filter(p => p.visible === false).length}
+                  </span>
+                </div>
+                <div className="h-px bg-slate-200 my-2"></div>
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-slate-600 font-medium">Display Date</span>
+                  <span className="font-semibold text-slate-800">{siteMetaDate || 'Not set'}</span>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <button 
+                  onClick={() => setShowPublishModal(false)}
+                  className="flex-1 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-medium hover:bg-slate-50 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button 
+                  onClick={saveToGitHub}
+                  className="flex-1 px-4 py-2.5 rounded-xl bg-brand-600 text-white font-medium hover:bg-brand-700 shadow-md shadow-brand-500/20 transition-all flex justify-center items-center gap-2"
+                >
+                  <Save className="w-4 h-4" /> Confirm & Publish
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4 bg-white p-4 sm:px-6 rounded-2xl border border-slate-200 shadow-sm">
         <div>
           <h1 className="text-xl font-bold font-display text-slate-800 flex items-center gap-2">
@@ -621,6 +817,16 @@ export default function Admin() {
                 <Plus className="w-4 h-4" /> Add Product
               </button>
 
+              <button 
+                onClick={() => {
+                  setProducts(organizeProducts(products));
+                  setEditingIndex(null);
+                }}
+                className="flex items-center gap-1 bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors whitespace-nowrap"
+              >
+                Auto-Sort List
+              </button>
+
               <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-600 bg-slate-50 px-2.5 py-1.5 rounded-lg border border-slate-200 whitespace-nowrap">
                 <span className="hidden sm:inline">Display Date:</span>
                 <span className="sm:hidden">Date:</span>
@@ -650,31 +856,54 @@ export default function Admin() {
                 <span className="hidden sm:inline">{isArchiving ? 'Archiving...' : 'Backup Archive'}</span>
               </button>
               
-              <button onClick={saveToGitHub} disabled={isSaving || isArchiving} className="flex items-center gap-2 bg-brand-600 text-white border border-brand-600 px-4 py-2 rounded-xl text-sm font-medium hover:bg-brand-700 transition-colors shadow-sm disabled:opacity-50 whitespace-nowrap">
+              <button onClick={() => setShowPublishModal(true)} disabled={isSaving || isArchiving} className="flex items-center gap-2 bg-brand-600 text-white border border-brand-600 px-4 py-2 rounded-xl text-sm font-medium hover:bg-brand-700 transition-colors shadow-sm disabled:opacity-50 whitespace-nowrap">
                 {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
                 <span className="hidden sm:inline">{isSaving ? 'Saving...' : 'Save to GitHub'}</span>
               </button>
             </div>
           </div>
 
+          <div className="relative mb-2">
+            <Search className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+            <input 
+              type="text" 
+              value={adminSearch}
+              onChange={(e) => setAdminSearch(e.target.value)}
+              placeholder="Search products by name, category, or ID..."
+              className="w-full bg-white border border-slate-200 rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-all shadow-sm"
+            />
+          </div>
+
         <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="products-list">
+          <Droppable droppableId="products-list" isDropDisabled={adminSearch !== ''}>
             {(provided) => (
               <div {...provided.droppableProps} ref={provided.innerRef} className="space-y-4">
-                {products.map((product, index) => (
-                  <Draggable key={product.id || `temp-${index}`} draggableId={product.id || `temp-${index}`} index={index}>
+                {filteredAdminProducts.map((product, mapIndex) => {
+                  const originalIndex = products.findIndex(p => p.id === product.id);
+                  return (
+                  <Draggable key={product.id || `temp-${originalIndex}`} draggableId={product.id || `temp-${originalIndex}`} index={originalIndex} isDragDisabled={adminSearch !== ''}>
                     {(provided) => (
                       <div 
                         ref={provided.innerRef}
                         {...provided.draggableProps}
-                        className="bg-white border rounded-2xl shadow-sm overflow-hidden transition-all duration-200 border-slate-200"
+                        className={`border rounded-2xl shadow-sm overflow-hidden transition-all duration-500 ${
+                          product.visible === false 
+                            ? 'border-slate-300 bg-slate-200/70 opacity-60 grayscale' 
+                            : product.stock_status === 'out_of_stock'
+                              ? 'border-red-300 bg-red-100/60'
+                              : 'border-slate-200 bg-white'
+                        }`}
                       >
-                        <div className={`flex items-center justify-between p-4 hover:bg-slate-50 transition-colors ${editingIndex === index ? 'bg-slate-50 border-b border-slate-200' : ''}`}>
-                          <div className="flex items-center gap-3">
-                            <div {...provided.dragHandleProps} className="text-slate-400 hover:text-brand-500 p-2 cursor-grab active:cursor-grabbing flex items-center justify-center">
+                        <div className={`flex items-center justify-between p-4 transition-colors ${
+                          editingIndex === originalIndex || product.stock_status === 'out_of_stock' || product.visible === false 
+                            ? 'border-b border-black/5 bg-black/5' 
+                            : 'hover:bg-slate-50 border-b border-transparent'
+                        }`}>
+                          <div className="flex items-center gap-3 flex-1">
+                            <div {...provided.dragHandleProps} className={`text-slate-400 p-2 flex items-center justify-center ${adminSearch !== '' ? 'opacity-30 cursor-not-allowed' : 'hover:text-brand-500 cursor-grab active:cursor-grabbing'}`}>
                               <GripVertical className="w-5 h-5" />
                             </div>
-                            <div className="flex items-center gap-4 cursor-pointer" onClick={() => setEditingIndex(editingIndex === index ? null : index)}>
+                            <div className="flex items-center gap-4 cursor-pointer flex-1 py-1" onClick={() => setEditingIndex(editingIndex === originalIndex ? null : originalIndex)}>
                               <div className="w-10 h-10 bg-slate-100 rounded-lg overflow-hidden flex items-center justify-center shrink-0 border border-slate-200">
                                 {product.image ? (
                                   <img src={product.image} alt="" className="w-full h-full object-contain p-1" />
@@ -694,43 +923,46 @@ export default function Admin() {
                           </div>
                           
                           <div className="flex items-center gap-2">
-                            <button onClick={(e) => { e.stopPropagation(); removeProduct(index); }} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors">
+                            <button onClick={(e) => { e.stopPropagation(); duplicateProduct(originalIndex); }} className="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 rounded-lg transition-colors" title="Duplicate Product">
+                              <Copy className="w-4 h-4" />
+                            </button>
+                            <button onClick={(e) => { e.stopPropagation(); removeProduct(originalIndex); }} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors" title="Delete Product">
                               <Trash2 className="w-4 h-4" />
                             </button>
                             <div className="p-2 text-slate-400 bg-slate-50 rounded-lg flex items-center justify-center">
-                              {editingIndex === index ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                              {editingIndex === originalIndex ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                             </div>
                           </div>
                         </div>
 
-                        {editingIndex === index && (
+                        {editingIndex === originalIndex && (
                           <div className="p-5 sm:p-6 grid grid-cols-1 md:grid-cols-2 gap-4 bg-white">
                             <div className="space-y-4 md:col-span-2 relative">
                                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 border-b pb-2 mb-3">Basic Info</h4>
                             </div>
                             <div>
                               <label className="block text-xs font-medium text-slate-500 mb-1">ID</label>
-                              <input type="text" value={product.id || ''} onChange={(e) => updateProduct(index, 'id', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
+                              <input type="text" value={product.id || ''} onChange={(e) => updateProduct(originalIndex, 'id', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
                             </div>
                             <div>
                               <label className="block text-xs font-medium text-slate-500 mb-1">Slug (URL friendly)</label>
-                              <input type="text" value={product.slug || ''} onChange={(e) => updateProduct(index, 'slug', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
+                              <input type="text" value={product.slug || ''} onChange={(e) => updateProduct(originalIndex, 'slug', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
                             </div>
                             <div>
                               <label className="block text-xs font-medium text-slate-500 mb-1">Name</label>
-                              <input type="text" value={product.name || ''} onChange={(e) => updateProduct(index, 'name', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
+                              <input type="text" value={product.name || ''} onChange={(e) => updateProduct(originalIndex, 'name', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
                             </div>
                             <div>
                               <label className="block text-xs font-medium text-slate-500 mb-1">Plan Description</label>
-                              <input type="text" value={product.plan || ''} onChange={(e) => updateProduct(index, 'plan', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
+                              <input type="text" value={product.plan || ''} onChange={(e) => updateProduct(originalIndex, 'plan', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
                             </div>
                             <div>
                               <label className="block text-xs font-medium text-slate-500 mb-1">Category</label>
-                              <input type="text" value={product.category || ''} onChange={(e) => updateProduct(index, 'category', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
+                              <input type="text" value={product.category || ''} onChange={(e) => updateProduct(originalIndex, 'category', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
                             </div>
                             <div>
                               <label className="block text-xs font-medium text-slate-500 mb-1">Image URL</label>
-                              <input type="text" list="logos-list" value={product.image || ''} onChange={(e) => updateProduct(index, 'image', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
+                              <input type="text" list="logos-list" value={product.image || ''} onChange={(e) => updateProduct(originalIndex, 'image', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
                             </div>
 
                             <div className="space-y-4 md:col-span-2 mt-4">
@@ -739,21 +971,21 @@ export default function Admin() {
                             <div className="grid grid-cols-2 gap-4">
                               <div>
                                 <label className="block text-xs font-medium text-slate-500 mb-1">Official Price</label>
-                                <input type="number" step="0.01" value={product.official_price?.amount ?? ''} onChange={(e) => updateProduct(index, 'official_price.amount', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
+                                <input type="number" step="0.01" value={product.official_price?.amount ?? ''} onChange={(e) => updateProduct(originalIndex, 'official_price.amount', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
                               </div>
                               <div>
                                 <label className="block text-xs font-medium text-slate-500 mb-1">Duration</label>
-                                <input type="text" list="duration-list" value={product.official_price?.duration || ''} onChange={(e) => updateProduct(index, 'official_price.duration', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
+                                <input type="text" list="duration-list" value={product.official_price?.duration || ''} onChange={(e) => updateProduct(originalIndex, 'official_price.duration', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
                               </div>
                             </div>
                             <div className="grid grid-cols-2 gap-4">
                               <div>
                                 <label className="block text-xs font-medium text-slate-500 mb-1">Our Price</label>
-                                <input type="number" step="0.01" value={product.our_price?.amount ?? ''} onChange={(e) => updateProduct(index, 'our_price.amount', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900 bg-green-50/50" />
+                                <input type="number" step="0.01" value={product.our_price?.amount ?? ''} onChange={(e) => updateProduct(originalIndex, 'our_price.amount', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900 bg-green-50/50" />
                               </div>
                               <div>
                                 <label className="block text-xs font-medium text-slate-500 mb-1">Saved Amount</label>
-                                <input type="number" step="0.01" value={product.saved_amount?.amount ?? ''} onChange={(e) => updateProduct(index, 'saved_amount.amount', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900 bg-green-50/50" />
+                                <input type="number" step="0.01" value={product.saved_amount?.amount ?? ''} onChange={(e) => updateProduct(originalIndex, 'saved_amount.amount', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900 bg-green-50/50" />
                               </div>
                             </div>
 
@@ -762,32 +994,32 @@ export default function Admin() {
                             </div>
                             <div className="md:col-span-2">
                               <label className="block text-xs font-medium text-slate-500 mb-1">How to Get / Instructions</label>
-                              <textarea value={product.how_to_get || ''} onChange={(e) => updateProduct(index, 'how_to_get', e.target.value)} rows="3" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900 resize-y"></textarea>
+                              <textarea value={product.how_to_get || ''} onChange={(e) => updateProduct(originalIndex, 'how_to_get', e.target.value)} rows="3" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900 resize-y"></textarea>
                             </div>
                             <div className="md:col-span-2">
                               <label className="block text-xs font-medium text-slate-500 mb-1">Remarks</label>
-                              <textarea value={product.remarks || ''} onChange={(e) => updateProduct(index, 'remarks', e.target.value)} rows="3" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900 resize-y"></textarea>
+                              <textarea value={product.remarks || ''} onChange={(e) => updateProduct(originalIndex, 'remarks', e.target.value)} rows="3" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900 resize-y"></textarea>
                             </div>
                             <div>
                               <label className="block text-xs font-medium text-slate-500 mb-1">Stock Status</label>
-                              <select value={product.stock_status || 'in_stock'} onChange={(e) => updateProduct(index, 'stock_status', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900">
+                              <select value={product.stock_status || 'in_stock'} onChange={(e) => updateProduct(originalIndex, 'stock_status', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900">
                                 <option value="in_stock">In Stock</option>
                                 <option value="out_of_stock">Out of Stock</option>
                               </select>
                             </div>
                             <div>
                               <label className="block text-xs font-medium text-slate-500 mb-1">Badge / Tag</label>
-                              <input type="text" list="badge-list" value={product.status || ''} onChange={(e) => updateProduct(index, 'status', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
+                              <input type="text" list="badge-list" value={product.status || ''} onChange={(e) => updateProduct(originalIndex, 'status', e.target.value)} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900/20 focus:border-slate-900" />
                             </div>
                             <div>
                               <label className="block text-xs font-medium text-slate-500 mb-1">Visibility</label>
                               <div className="flex items-center gap-4 pt-2">
                                 <label className="flex items-center gap-2 text-sm cursor-pointer hover:text-slate-900">
-                                  <input type="radio" value="true" checked={product.visible === true} onChange={(e) => updateProduct(index, 'visible', e.target.value)} className="text-slate-900 focus:ring-slate-900 w-4 h-4 cursor-pointer" />
+                                  <input type="radio" value="true" checked={product.visible === true} onChange={(e) => updateProduct(originalIndex, 'visible', e.target.value)} className="text-slate-900 focus:ring-slate-900 w-4 h-4 cursor-pointer" />
                                   Visible
                                 </label>
                                 <label className="flex items-center gap-2 text-sm cursor-pointer hover:text-slate-900">
-                                  <input type="radio" value="false" checked={product.visible === false} onChange={(e) => updateProduct(index, 'visible', e.target.value)} className="text-slate-900 focus:ring-slate-900 w-4 h-4 cursor-pointer" />
+                                  <input type="radio" value="false" checked={product.visible === false} onChange={(e) => updateProduct(originalIndex, 'visible', e.target.value)} className="text-slate-900 focus:ring-slate-900 w-4 h-4 cursor-pointer" />
                                   Hidden
                                 </label>
                               </div>
@@ -802,7 +1034,8 @@ export default function Admin() {
                       </div>
                     )}
                   </Draggable>
-                ))}
+                );
+                })}
                 {provided.placeholder}
               </div>
             )}

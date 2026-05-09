@@ -8,20 +8,10 @@ export function useProducts() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const repo = import.meta.env.VITE_GITHUB_REPO;
-        
-        // Fetch from GitHub directly if repo is set to get the absolute latest data instantly
-        // The timestamp ?t= prevents the browser from caching old data
-        const url = repo 
-          ? `https://raw.githubusercontent.com/${repo}/main/public/data/products.json?t=${Date.now()}`
-          : '/data/products.json';
-
-        let response = await fetch(url);
-        
-        // If GitHub fetch fails (e.g. rate limit), fallback to the local file
-        if (!response.ok && repo) {
-          response = await fetch('/data/products.json');
-        }
+        // Fetch securely from the local server/CDN.
+        // Because Vercel auto-deploys when you save to GitHub, this is always up to date!
+        // It also completely hides your GitHub info from the public Network tab.
+        const response = await fetch('/data/products.json');
 
         if (!response.ok) throw new Error('Failed to fetch products');
         

@@ -21,6 +21,7 @@ export default function Home() {
 
   const filteredProducts = useMemo(() => {
     let result = products.filter(p => {
+      if (p.visible === false) return false;
       const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.plan.toLowerCase().includes(searchQuery.toLowerCase());
       const matchCategory = category === 'All' || p.category === category;
@@ -203,11 +204,32 @@ export default function Home() {
                 )}
               </div>
             ) : (
-              <ProductGrid>
-                {filteredProducts.map(product => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </ProductGrid>
+              <div className="space-y-12">
+                {filteredProducts.some(p => p.stock_status !== 'out_of_stock') && (
+                  <ProductGrid>
+                    {filteredProducts
+                      .filter(p => p.stock_status !== 'out_of_stock')
+                      .map(product => (
+                        <ProductCard key={product.id} product={product} />
+                    ))}
+                  </ProductGrid>
+                )}
+
+                {filteredProducts.some(p => p.stock_status === 'out_of_stock') && (
+                  <div className="pt-8 border-t border-slate-200 opacity-80">
+                    <h2 className="text-xl md:text-2xl font-bold text-slate-500 tracking-tight mb-5 flex items-center gap-2">
+                      Currently Out of Stock
+                    </h2>
+                    <ProductGrid>
+                      {filteredProducts
+                        .filter(p => p.stock_status === 'out_of_stock')
+                        .map(product => (
+                          <ProductCard key={product.id} product={product} />
+                      ))}
+                    </ProductGrid>
+                  </div>
+                )}
+              </div>
             )}
           </>
         ) : (
