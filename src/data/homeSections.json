@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ai-tools",
+    "title": "⚡ Trending AI & Tech",
+    "category": "AI",
+    "limit": 12
+  },
+  {
+    "id": "developer-tools",
+    "title": "👨‍💻 Top Developer Tools",
+    "category": "Developer Tools",
+    "limit": 8
+  },
+  {
+    "id": "learning",
+    "title": "📚 Learning & Education",
+    "category": "Learning",
+    "limit": 8
+  },
+  {
+    "id": "streaming",
+    "title": "📺 Entertainment & Streaming",
+    "category": "Streaming",
+    "limit": 8
+  },
+  {
+    "id": "automation",
+    "title": "⚙️ Automation Tools",
+    "category": "Automation",
+    "limit": 8
+  }
+]

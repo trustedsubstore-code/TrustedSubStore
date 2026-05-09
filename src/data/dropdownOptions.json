@@ -1,0 +1,20 @@
+{
+  "durations": [
+    "Month",
+    "Year",
+    "2 Months",
+    "3 Months",
+    "6 Months",
+    "1.5 Years",
+    "2 Years",
+    "Pay as You Go",
+    "Lifetime"
+  ],
+  "badges": [
+    "New",
+    "Popular",
+    "Premium",
+    "Trending",
+    "Best Value"
+  ]
+}

@@ -1,0 +1,1354 @@
+[
+  {
+    "id": "1",
+    "slug": "chatgpt-1m-renew-personal",
+    "name": "ChatGPT Plus (Renewable)",
+    "plan": "1 Month Personal",
+    "category": "AI",
+    "official_price": {
+      "amount": 2454,
+      "currency": "BDT",
+      "duration": "Month"
+    },
+    "our_price": {
+      "amount": 1450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 1004,
+      "currency": "BDT"
+    },
+    "image": "/logos/chatgpt.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "On your Personal Email.\nHistory will be available.\nRenew possible on every month.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Popular"
+  },
+  {
+    "id": "2",
+    "slug": "chatgpt-business-1m-account",
+    "name": "ChatGPT Business",
+    "plan": "1 Month Personal",
+    "category": "AI",
+    "official_price": {
+      "amount": 3680,
+      "currency": "BDT",
+      "duration": "Month"
+    },
+    "our_price": {
+      "amount": 1150,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 2530,
+      "currency": "BDT"
+    },
+    "image": "/logos/chatgpt.png",
+    "how_to_get": "Share your email.\nGet Invitation, Join & Switch Workspace.",
+    "remarks": "ChatGPT Business/Team Invitation\n\nBusiness gives \nabout 2× more messages \n(≈100 per 3 hours) than \nPlus (≈40–80 per 3 hours)\n\nEnterprise-grade privacy \n(your data is never used \nto train models)\n\nPlease note: if the workspace is deactivated after 1 month, previous chat history will no longer be available.\n25 days warranty",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Popular"
+  },
+  {
+    "id": "3",
+    "slug": "google-package-1-1y",
+    "name": "Google - Drive 2TB + Gemini AI + NotebookLM",
+    "plan": "P1: 1/1.5 Year",
+    "category": "AI",
+    "official_price": {
+      "amount": 30000,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 3950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 26050,
+      "currency": "BDT"
+    },
+    "image": "/logos/google.png",
+    "how_to_get": "Share your Gmail. \nGet invitation and Join.",
+    "remarks": "Account on own email\n\n2 TB storage for Photos, Drive, and Gmail\nGemini 3.1 Pro with limited Veo 3.1 access\n1,000 monthly AI credits + higher NotebookLM access\nGemini in Gmail, Docs, Sheets and Slides",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Popular"
+  },
+  {
+    "id": "4",
+    "slug": "google-package-2-1y",
+    "name": "Google - Meet + Drive 2TB + Gemini AI + NotebookLM",
+    "plan": "P2: 1 Year",
+    "category": "AI",
+    "official_price": {
+      "amount": 30000,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 4450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 25550,
+      "currency": "BDT"
+    },
+    "image": "/logos/google.png",
+    "how_to_get": "Share your Gmail. \nGet invitation and Join.",
+    "remarks": "Account on own email\n\nGoogle Meet Unlimited with Recording\n2 TB storage for Photos, Drive, and Gmail\nGemini 3.1 Pro with limited Veo 3.1 access\n1,000 monthly AI credits + higher NotebookLM access\nGemini in Gmail, Docs, Sheets and Slides",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "5",
+    "slug": "google-package-3-1y",
+    "name": "Google - Antigravity + Drive 2TB + Gemini AI + NotebookLM",
+    "plan": "P3: 1 Year",
+    "category": "Developer Tools",
+    "official_price": {
+      "amount": 30000,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 4950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 25050,
+      "currency": "BDT"
+    },
+    "image": "/logos/google.png",
+    "how_to_get": "Share your Gmail. \nGet invitation and Join.",
+    "remarks": "Account on own email\n\nAntiGravity IDE Developer Plan\n\n2 TB storage for Photos, Drive, and Gmail\nGemini 3.1 Pro with limited Veo 3.1 access\n1,000 monthly AI credits + higher NotebookLM access\nGemini in Gmail, Docs, Sheets and Slides",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Popular"
+  },
+  {
+    "id": "6",
+    "slug": "google-package-4-monthly",
+    "name": "Google - Youtube + Drive 2TB + Gemini AI + Meet + NotebookLM",
+    "plan": "P1: 1 Month",
+    "category": "AI",
+    "official_price": {
+      "amount": 2500,
+      "currency": "BDT",
+      "duration": "Month"
+    },
+    "our_price": {
+      "amount": 350,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 2150,
+      "currency": "BDT"
+    },
+    "image": "/logos/google.png",
+    "how_to_get": "Share your Gmail. \nGet invitation and Join.",
+    "remarks": "Youtube + Drive 2TB + Gemini AI + Meet\n\nDon't LEAVE the Family without Informing",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "7",
+    "slug": "youtube-premium-1y",
+    "name": "YouTube Premium",
+    "plan": "1 Year",
+    "category": "Streaming",
+    "official_price": {
+      "amount": 0,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 4450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 0,
+      "currency": "BDT"
+    },
+    "image": "/logos/youtube.png",
+    "how_to_get": "Share your Gmail address and country name. \n\nGet invitation/voucher link on your Gmail and join/redeem.",
+    "remarks": "Not for Bangladesh.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Popular"
+  },
+  {
+    "id": "8",
+    "slug": "canva-premium-edu-ai-1y",
+    "name": "Canva Premium Edu with AI - 1 Year | 3 Years",
+    "plan": "1 Year",
+    "category": "Design",
+    "official_price": {
+      "amount": 9000,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 550,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 8450,
+      "currency": "BDT"
+    },
+    "image": "/logos/canva.png",
+    "how_to_get": "Share your Canva email. \n\nGet invitation and Join.",
+    "remarks": "Account on own email.\n\nLooking for 3 years? Contact us please!",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Popular"
+  },
+  {
+    "id": "9",
+    "slug": "chatgpt-plus-1m",
+    "name": "ChatGPT Plus (1 Month Account)",
+    "plan": "1 Month",
+    "category": "AI",
+    "official_price": {
+      "amount": 2450,
+      "currency": "BDT",
+      "duration": "Month"
+    },
+    "our_price": {
+      "amount": 550,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 1900,
+      "currency": "BDT"
+    },
+    "image": "/logos/chatgpt.png",
+    "how_to_get": "Seperate/Readymade Account for 1 month will be provided \n(Mail, Password & 2FA Code)",
+    "remarks": "Only valid for 1 month",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "10",
+    "slug": "datacamp-ai-ml-data-science-1y",
+    "name": "DataCamp - AI ML Data Science",
+    "plan": "1 Year",
+    "category": "Learning",
+    "official_price": {
+      "amount": 9000,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 1950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 7050,
+      "currency": "BDT"
+    },
+    "image": "/logos/datacamp.png",
+    "how_to_get": "Share your email.",
+    "remarks": "",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "11",
+    "slug": "github-copilot-pro-student-2y",
+    "name": "GitHub Copilot Pro",
+    "plan": "2 Years",
+    "category": "Developer Tools",
+    "official_price": {
+      "amount": 28800,
+      "currency": "BDT",
+      "duration": "2 years"
+    },
+    "our_price": {
+      "amount": 6450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 22350,
+      "currency": "BDT"
+    },
+    "image": "/logos/github.png",
+    "how_to_get": "Email and password will be provided. \n\nYou can change the email and password.",
+    "remarks": "Validity 2 years. \n\nReplacement warranty 1 year. Unlimited usage. \n\nWorks on VS Code, JetBrains, Neovim and GitHub.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Trending"
+  },
+  {
+    "id": "12",
+    "slug": "edx-personal-1y",
+    "name": "edX Personal",
+    "plan": "1 Year",
+    "category": "Learning",
+    "official_price": {
+      "amount": 36000,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 6450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 29550,
+      "currency": "BDT"
+    },
+    "image": "/logos/edx.png",
+    "how_to_get": "Use your own email.",
+    "remarks": "Certificates on your name.\n\nTotal 126 professional courses. \n126 Course List: https://drive.google.com/file/d/1-IvrrMfWByo6R3rsydbbgJEGmYftF89x/view",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "13",
+    "slug": "pluralsight-premium-6m",
+    "name": "Pluralsight Premium",
+    "plan": "6 Months",
+    "category": "Learning",
+    "official_price": {
+      "amount": 21600,
+      "currency": "BDT",
+      "duration": "6 Months"
+    },
+    "our_price": {
+      "amount": 3950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 17650,
+      "currency": "BDT"
+    },
+    "image": "/logos/pluralsight.png",
+    "how_to_get": "Use your own email.",
+    "remarks": "Certificates on your name.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "14",
+    "slug": "consensus-pro-1m",
+    "name": "Consensus Pro",
+    "plan": "1 Month",
+    "category": "Research",
+    "official_price": {
+      "amount": 1840,
+      "currency": "BDT",
+      "duration": "Month"
+    },
+    "our_price": {
+      "amount": 850,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 990,
+      "currency": "BDT"
+    },
+    "image": "/logos/consensus.png",
+    "how_to_get": "Seperate/Readymade Account for 1 month will be provided \n(Mail, Password & 2FA Code)",
+    "remarks": "Only valid for 1 month",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "15",
+    "slug": "grammarly-pro-6m",
+    "name": "Grammarly Pro - 6 Months | 1 Year",
+    "plan": "6 Months",
+    "category": "Writing",
+    "official_price": {
+      "amount": 8640,
+      "currency": "BDT",
+      "duration": "6 months"
+    },
+    "our_price": {
+      "amount": 2540,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 6100,
+      "currency": "BDT"
+    },
+    "image": "/logos/grammarly.png",
+    "how_to_get": "Share your Grammarly login details.",
+    "remarks": "Account on own email.\n\nLooking for 1 year? Contact us please!",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "16",
+    "slug": "microsoft-365-online-desktop-1y",
+    "name": "Microsoft 365 Online + Desktop 100GB OneDrive + Copilot",
+    "plan": "1 Year",
+    "category": "Productivity",
+    "official_price": {
+      "amount": 11998,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 1950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 10048,
+      "currency": "BDT"
+    },
+    "image": "/logos/microsoft.png",
+    "how_to_get": "Seperate/Readymade Account will be provided \n(Mail, Password & 2FA Code)",
+    "remarks": "Personal account. Email access.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "17",
+    "slug": "capcut-pro-6m",
+    "name": "CapCut Pro - 1 Month | 6 Months | 1 Year",
+    "plan": "6 Months",
+    "category": "Editing",
+    "official_price": {
+      "amount": 10980,
+      "currency": "BDT",
+      "duration": "6 Months"
+    },
+    "our_price": {
+      "amount": 2450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 8530,
+      "currency": "BDT"
+    },
+    "image": "/logos/capcut.png",
+    "how_to_get": "Seperate/Readymade Account for 6 months will be provided \n(Mail, Password & 2FA Code)",
+    "remarks": "Looking for 1 month OR 1 year? Contact us please!",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Popular"
+  },
+  {
+    "id": "18",
+    "slug": "makecom-premium-teams-1y",
+    "name": "Make.com Premium Teams",
+    "plan": "1 Year",
+    "category": "Automation",
+    "official_price": {
+      "amount": 76320,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 8950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 67770,
+      "currency": "BDT"
+    },
+    "image": "/logos/make.png",
+    "how_to_get": "Create a new Make.com account. \nShare login details. ",
+    "remarks": "Account on own email.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "19",
+    "slug": "ipvanish-essential-1y",
+    "name": "IPVanish VPN Essential",
+    "plan": "1 Year",
+    "category": "VPN",
+    "official_price": {
+      "amount": 18705,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 2950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 15755,
+      "currency": "BDT"
+    },
+    "image": "/logos/ipvanish.png",
+    "how_to_get": "Share your IPVanish email.",
+    "remarks": "Account on own email.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "20",
+    "slug": "elevenlabs-creator-3m",
+    "name": "ElevenLabs Creator",
+    "plan": "3 Months",
+    "category": "AI",
+    "official_price": {
+      "amount": 7920,
+      "currency": "BDT",
+      "duration": "3 Months"
+    },
+    "our_price": {
+      "amount": 2450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 5470,
+      "currency": "BDT"
+    },
+    "image": "/logos/elevenlabs.png",
+    "how_to_get": "Share your ElevenLabs login details.",
+    "remarks": "AI credit 110000 per month.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "21",
+    "slug": "bolt-pro-1y",
+    "name": "Bolt.new Pro",
+    "plan": "1 Year",
+    "category": "Developer Tools",
+    "official_price": {
+      "amount": 28800,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 8550,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 20250,
+      "currency": "BDT"
+    },
+    "image": "/logos/boltnew.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "Account on own email.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "22",
+    "slug": "freepik-pro-1m",
+    "name": "Freepik Premium Plus - 45K AI Credits",
+    "plan": "12 Months",
+    "category": "Design",
+    "official_price": {
+      "amount": 4785,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 1650,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 3135,
+      "currency": "BDT"
+    },
+    "image": "/logos/freepik.png",
+    "how_to_get": "Share your Freepik email.",
+    "remarks": "AI credit 45k for 12 months. \nWarranty 1 Month.\n\nCan use on multiple devices.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "23",
+    "slug": "surfshark-one-12m",
+    "name": "Surfshark One - 12 Months+",
+    "plan": "12 Months",
+    "category": "VPN",
+    "official_price": {
+      "amount": 28460,
+      "currency": "BDT",
+      "duration": "13 months"
+    },
+    "our_price": {
+      "amount": 1450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 27010,
+      "currency": "BDT"
+    },
+    "image": "/logos/surfshark.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "Current subscription expires 17th May, 2027. \n\nOne purchase covers both PC and mobile access. ",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "24",
+    "slug": "n8n-self-hosted-1m",
+    "name": "n8n Self Hosted Community Edition",
+    "plan": "1 Month",
+    "category": "Automation",
+    "official_price": {
+      "amount": 0,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 5450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 0,
+      "currency": "BDT"
+    },
+    "image": "/logos/n8n.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "Unlimited workflows. \nUnlimited triggers. \nServer: 4 vCPU, 16 GB RAM, 200 GB NVMe Disk, 16 TB bandwidth.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Popular"
+  },
+  {
+    "id": "25",
+    "slug": "warp-ai-pro-1y",
+    "name": "Warp AI Pro",
+    "plan": "1 Year",
+    "category": "Developer Tools",
+    "official_price": {
+      "amount": 28800,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 8350,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 22850,
+      "currency": "BDT"
+    },
+    "image": "/logos/wrapdev.png",
+    "how_to_get": "Account on own email. Contact for details.",
+    "remarks": "AI-powered agentic development environment. Best alternative of Cursor AI.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "26",
+    "slug": "jetbrains-product-pack-12m",
+    "name": "JetBrains Product Pack",
+    "plan": "12 Months",
+    "category": "Developer Tools",
+    "official_price": {
+      "amount": 34680,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 4450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 30230,
+      "currency": "BDT"
+    },
+    "image": "/logos/jetbrains.jpg",
+    "how_to_get": "Share your JetBrains login details.",
+    "remarks": "Includes all premium tools including CLion, DataGrip, DataSpell, IntelliJ IDEA Ultimate, PhpStorm, PyCharm, Rider, RubyMine and WebStorm.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "27",
+    "slug": "truecaller-premium-1y",
+    "name": "Truecaller Premium",
+    "plan": "1 Year",
+    "category": "Utility",
+    "official_price": {
+      "amount": 8998,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 2950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 6048,
+      "currency": "BDT"
+    },
+    "image": "/logos/truecaller.png",
+    "how_to_get": "Share your mobile number. \nWe will do the rest.",
+    "remarks": "",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "28",
+    "slug": "replit-core-1y",
+    "name": "Replit Core",
+    "plan": "1 Year",
+    "category": "Developer Tools",
+    "official_price": {
+      "amount": 28800,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 7950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 20850,
+      "currency": "BDT"
+    },
+    "image": "/logos/replit.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "AI-powered code assistant. 4 vCPUs, 8 GB RAM, 50 GB storage. One-click deploy, SSH, private Repls. \n$25 monthly credit. Priority support and community access.",
+    "stock_status": "out_of_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "29",
+    "slug": "rezi-ai-lifetime",
+    "name": "Rezi AI",
+    "plan": "Lifetime",
+    "category": "AI",
+    "official_price": {
+      "amount": 15480,
+      "currency": "BDT",
+      "duration": "Lifetime"
+    },
+    "our_price": {
+      "amount": 1550,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 13930,
+      "currency": "BDT"
+    },
+    "image": "/logos/rezi.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "AI resume / CV builder.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "30",
+    "slug": "blinkist-pay-per-book",
+    "name": "Blinkist",
+    "plan": "Pay Per Book",
+    "category": "Learning",
+    "official_price": {
+      "amount": 0,
+      "currency": "BDT",
+      "duration": "Pay as You Go"
+    },
+    "our_price": {
+      "amount": 80,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 0,
+      "currency": "BDT"
+    },
+    "image": "/logos/blinkist.png",
+    "how_to_get": "Share the book name that exists on Blinkist or the Blinkist link.",
+    "remarks": "Summary delivery in text or audio in a few minutes. No need to purchase subscription.\n\nBlinkist – Your Shortcut to Knowledge\n\nWhy spend hours reading when you can get key insights \nfrom bestselling books in 15 minutes?\n\n1. Share the book name (that exists on Blinkist) OR the Blinkist link.\n2. We’ll deliver you the summary (text/audio) in just a few minutes.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "31",
+    "slug": "linkedin-learning-1y",
+    "name": "LinkedIn Learning",
+    "plan": "1 Year",
+    "category": "Learning",
+    "official_price": {
+      "amount": 0,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 1950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 0,
+      "currency": "BDT"
+    },
+    "image": "/logos/linkedinlearning.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "24,000+ courses without certificate.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "32",
+    "slug": "autodesk-premium-access-1y",
+    "name": "Autodesk Premium Access",
+    "plan": "1 Year",
+    "category": "Design",
+    "official_price": {
+      "amount": 0,
+      "currency": "BDT",
+      "duration": "year"
+    },
+    "our_price": {
+      "amount": 9950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 0,
+      "currency": "BDT"
+    },
+    "image": "/logos/autodesk.svg",
+    "how_to_get": "Account on own email. Contact for details.",
+    "remarks": "Includes products like Fusion, AutoCAD, Revit, Civil 3D, Maya, Inventor and more.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "33",
+    "slug": "duolingo-super-1y",
+    "name": "Duolingo Super",
+    "plan": "1 Year",
+    "category": "Learning",
+    "official_price": {
+      "amount": 10080,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 2450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 7630,
+      "currency": "BDT"
+    },
+    "image": "/logos/duolingo.png",
+    "how_to_get": "Account on own email. Contact for details.",
+    "remarks": "",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "34",
+    "slug": "notion-business-3m",
+    "name": "Notion Business",
+    "plan": "3 Months",
+    "category": "Productivity",
+    "official_price": {
+      "amount": 7200,
+      "currency": "BDT",
+      "duration": "3 Months"
+    },
+    "our_price": {
+      "amount": 1950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 5250,
+      "currency": "BDT"
+    },
+    "image": "/logos/notion.png",
+    "how_to_get": "Account on own email. Contact for details.",
+    "remarks": "Notion AI.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "35",
+    "slug": "adobe-creative-cloud-premium-1y",
+    "name": "Adobe Creative Cloud Premium",
+    "plan": "1 Year",
+    "category": "Design",
+    "official_price": {
+      "amount": 100800,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 12450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 88350,
+      "currency": "BDT"
+    },
+    "image": "/logos/adobe.png",
+    "how_to_get": "Share your email.",
+    "remarks": "20+ Adobe apps, plus beta apps\nWorks on Windows, Mac, and iPad\n4,000 AI credits per month\n1TB cloud storage\nUse on 2 devices at the same time\nCommercial / Enterprise license included\nNano Banana included",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "36",
+    "slug": "coursera-premium-1y",
+    "name": "Coursera Premium Subscription",
+    "plan": "1 Year",
+    "category": "Learning",
+    "official_price": {
+      "amount": 86376,
+      "currency": "BDT",
+      "duration": "1 Year"
+    },
+    "our_price": {
+      "amount": 10450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 75926,
+      "currency": "BDT"
+    },
+    "image": "/logos/coursera.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "Unlimited access to 7,000+ courses\nTop universities & companies\nCareer-boosting skills\nLearn anytime, anywhere\nNo certificate included",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Popular"
+  },
+  {
+    "id": "37",
+    "slug": "linkedin-premium-career-1y",
+    "name": "LinkedIn Premium Career",
+    "plan": "1 Year",
+    "category": "Career",
+    "official_price": {
+      "amount": 0,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 5450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 0,
+      "currency": "BDT"
+    },
+    "image": "/logos/linkedin.png",
+    "how_to_get": "We provide voucher link. You add your own card to activate ($0).",
+    "remarks": "Boost your career like a pro\nGet noticed by recruiters faster\n1 year validity\nWorks on your own account\n100% safe and secure\nNo login sharing needed",
+    "stock_status": "out_of_stock",
+    "visible": true,
+    "status": "New Arrival"
+  },
+  {
+    "id": "38",
+    "slug": "linkedin-business-1y-voucher",
+    "name": "LinkedIn Business",
+    "plan": "1 Year",
+    "category": "Career",
+    "official_price": {
+      "amount": 0,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 10950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 0,
+      "currency": "BDT"
+    },
+    "image": "/logos/linkedin.png",
+    "how_to_get": "Voucher link will be provided. Contact for details.",
+    "remarks": "15 InMails per month\nSee who's viewed your profile for the last 365 days\nUnlimited people browsing\nOpen profile\nJob and applicant insights\nTop applicant job recommendations\nCompany insights\nResume insights\n22,000+ LinkedIn Learning courses\nFull access to interview preparation tools",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "New Arrival"
+  },
+  {
+    "id": "39",
+    "slug": "linkedin-sales-navigator-2m",
+    "name": "LinkedIn Sales Navigator",
+    "plan": "2 Months",
+    "category": "Business",
+    "official_price": {
+      "amount": 0,
+      "currency": "BDT",
+      "duration": "2 Months"
+    },
+    "our_price": {
+      "amount": 3950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 0,
+      "currency": "BDT"
+    },
+    "image": "/logos/linkedin.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "Find better leads\nReach the right people faster\nGrow your network smarter",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "40",
+    "slug": "linkedin-premium-career-3m",
+    "name": "LinkedIn Premium Career",
+    "plan": "3 Months",
+    "category": "Career",
+    "official_price": {
+      "amount": 0,
+      "currency": "BDT",
+      "duration": "3 Months"
+    },
+    "our_price": {
+      "amount": 3450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 0,
+      "currency": "BDT"
+    },
+    "image": "/logos/linkedin.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "Boost your profile\nGet noticed faster\nUse premium career tools with ease",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Trending"
+  },
+  {
+    "id": "41",
+    "slug": "super-grok-active-1m",
+    "name": "Super Grok Active",
+    "plan": "1 Month",
+    "category": "AI",
+    "official_price": {
+      "amount": 3600,
+      "currency": "BDT",
+      "duration": "Month"
+    },
+    "our_price": {
+      "amount": 2250,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 1350,
+      "currency": "BDT"
+    },
+    "image": "/logos/grok.png",
+    "how_to_get": "On your personal email. Contact for details.",
+    "remarks": "On your personal email\nSmooth access\nBudget-friendly price",
+    "stock_status": "out_of_stock",
+    "visible": true,
+    "status": "New Arrival"
+  },
+  {
+    "id": "42",
+    "slug": "figma-edu-plan-1y",
+    "name": "Figma Edu Plan",
+    "plan": "1 Year",
+    "category": "Design",
+    "official_price": {
+      "amount": 23424,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 4450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 18974,
+      "currency": "BDT"
+    },
+    "image": "/logos/figma.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "Similar to Professional Plan\nFull seat\n3,000 AI credits per month",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "43",
+    "slug": "columbia-machine-learning-i-lifetime",
+    "name": "Machine Learning I - Columbia University Certification",
+    "plan": "Lifetime",
+    "category": "Learning",
+    "official_price": {
+      "amount": 23880,
+      "currency": "BDT",
+      "duration": "Lifetime"
+    },
+    "our_price": {
+      "amount": 3450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 20430,
+      "currency": "BDT"
+    },
+    "image": "/logos/columbia.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "Columbia University Certification. Official price: $199. Lifetime access.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "44",
+    "slug": "columbia-learning-ai-through-visualization-lifetime",
+    "name": "Learning AI Through Visualization - Columbia University Certification",
+    "plan": "Lifetime",
+    "category": "Learning",
+    "official_price": {
+      "amount": 23880,
+      "currency": "BDT",
+      "duration": "Lifetime"
+    },
+    "our_price": {
+      "amount": 3450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 20430,
+      "currency": "BDT"
+    },
+    "image": "/logos/columbia.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "Columbia University Certification. Official price: $199. Lifetime access.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "45",
+    "slug": "columbia-prompt-engineering-programming-openai-lifetime",
+    "name": "Prompt Engineering & Programming with OpenAI - Columbia University Certification",
+    "plan": "Lifetime",
+    "category": "Learning",
+    "official_price": {
+      "amount": 11880,
+      "currency": "BDT",
+      "duration": "Lifetime"
+    },
+    "our_price": {
+      "amount": 1450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 10430,
+      "currency": "BDT"
+    },
+    "image": "/logos/columbia.png",
+    "how_to_get": "Contact for details.",
+    "remarks": "Columbia University Certification. Official price: $99. Lifetime access.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Available"
+  },
+  {
+    "id": "46",
+    "slug": "linkedin-premium-sales-navigator-1y",
+    "name": "LinkedIn Premium Sales Navigator",
+    "plan": "1 Year",
+    "category": "Business",
+    "official_price": {
+      "amount": 0,
+      "currency": "BDT",
+      "duration": "Year"
+    },
+    "our_price": {
+      "amount": 9450,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 0,
+      "currency": "BDT"
+    },
+    "image": "/logos/linkedin.png",
+    "how_to_get": "We provide voucher link. You add your own card to activate ($0).",
+    "remarks": "Boost your career like a pro\nGet noticed by recruiters faster\n1 year validity\nWorks on your own account\n100% safe and secure\nNo login sharing needed",
+    "stock_status": "out_of_stock",
+    "visible": true,
+    "status": "New Arrival"
+  },
+  {
+    "id": "47",
+    "slug": "super-grok-readymade-1m",
+    "name": "Super Grok",
+    "plan": "1 Month",
+    "category": "AI",
+    "official_price": {
+      "amount": 3660,
+      "currency": "BDT",
+      "duration": "Month"
+    },
+    "our_price": {
+      "amount": 950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 2710,
+      "currency": "BDT"
+    },
+    "image": "/logos/grok.png",
+    "how_to_get": "Seperate/Readymade Account for 1 month will be provided \n(Mail, Password & 2FA Code)",
+    "remarks": "Readymade account.\nOnly valid for 1 month.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "New Arrival"
+  },
+  {
+    "id": "48",
+    "slug": "nordvpn-3m-readymade",
+    "name": "NordVPN",
+    "plan": "3 Months",
+    "category": "VPN",
+    "official_price": {
+      "amount": 0,
+      "currency": "BDT",
+      "duration": "3 Months"
+    },
+    "our_price": {
+      "amount": 925,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 0,
+      "currency": "BDT"
+    },
+    "image": "/logos/nordvpn.png",
+    "how_to_get": "Seperate/Readymade Account for 3 months will be provided \n(Mail, Password & 2FA Code)",
+    "remarks": "Readymade account.\nOnly valid for 3 months.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "New Arrival"
+  },
+  {
+    "id": "49",
+    "slug": "expressvpn-1m-readymade",
+    "name": "ExpressVPN",
+    "plan": "1 Month",
+    "category": "VPN",
+    "official_price": {
+      "amount": 0,
+      "currency": "BDT",
+      "duration": "Month"
+    },
+    "our_price": {
+      "amount": 270,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 0,
+      "currency": "BDT"
+    },
+    "image": "/logos/expressvpn.png",
+    "how_to_get": "Seperate/Readymade Account for 1 month will be provided \n(Mail, Password & 2FA Code)",
+    "remarks": "Readymade account.\nOnly valid for 1 month.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "New Arrival"
+  },
+  {
+    "id": "50",
+    "slug": "gamma-ai-pro-1m-readymade",
+    "name": "Gamma AI Pro",
+    "plan": "1 Month",
+    "category": "AI",
+    "official_price": {
+      "amount": 3050,
+      "currency": "BDT",
+      "duration": "Month"
+    },
+    "our_price": {
+      "amount": 1190,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 1860,
+      "currency": "BDT"
+    },
+    "image": "/logos/gamma.png",
+    "how_to_get": "Seperate/Readymade Account for 1 month will be provided \n(Mail, Password & 2FA Code)",
+    "remarks": "Readymade account.\nOnly valid for 1 month.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "New Arrival"
+  },
+  {
+    "id": "51",
+    "slug": "openart-ai-essential-1m-readymade",
+    "name": "OpenArt AI Essential",
+    "plan": "1 Month",
+    "category": "AI",
+    "official_price": {
+      "amount": 1708,
+      "currency": "BDT",
+      "duration": "Month"
+    },
+    "our_price": {
+      "amount": 1050,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 658,
+      "currency": "BDT"
+    },
+    "image": "/logos/openart.png",
+    "how_to_get": "Seperate/Readymade Account for 1 month will be provided \n(Mail, Password & 2FA Code)",
+    "remarks": "Readymade account.\nOnly valid for 1 month.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "New Arrival"
+  },
+  {
+    "id": "52",
+    "slug": "kling-ai-3000-credits-1m-readymade",
+    "name": "Kling AI",
+    "plan": "3000 Credits / 1 Month",
+    "category": "AI",
+    "official_price": {
+      "amount": 3972,
+      "currency": "BDT",
+      "duration": "Month"
+    },
+    "our_price": {
+      "amount": 1950,
+      "currency": "BDT"
+    },
+    "saved_amount": {
+      "amount": 2022,
+      "currency": "BDT"
+    },
+    "image": "/logos/kling.png",
+    "how_to_get": "Seperate/Readymade Account for 1 month will be provided \n(Mail, Password & 2FA Code)",
+    "remarks": "Readymade account.\n3000 credits included.\nOnly valid for 1 month.",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "New Arrival"
+  }
+]

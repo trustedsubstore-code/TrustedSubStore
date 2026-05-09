@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /json
+
+Sitemap: https://www.trustedsubstore.com/sitemap.xml
