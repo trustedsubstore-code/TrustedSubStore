@@ -913,7 +913,7 @@
     "id": "36",
     "slug": "notion-business-3m",
     "name": "Notion Business",
-    "plan": "3 Months",
+    "plan": "3 Months | 12 Months",
     "category": "Productivity",
     "official_price": {
       "currency": "BDT",
@@ -930,7 +930,7 @@
     },
     "image": "/logos/notion.png",
     "how_to_get": "Account on own email. Contact for details.",
-    "remarks": "Notion AI.",
+    "remarks": "Notion AI.\n\nAsk about 12 Months Pricing",
     "stock_status": "in_stock",
     "visible": true,
     "status": "Available"
