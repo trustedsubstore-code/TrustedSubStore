@@ -116,7 +116,7 @@
     },
     "our_price": {
       "currency": "BDT",
-      "amount": 4450
+      "amount": 4250
     },
     "saved_amount": {
       "currency": "BDT",
@@ -1197,6 +1197,32 @@
   },
   {
     "id": "47",
+    "slug": "claude-team-1-month-personal",
+    "name": "Claude Team",
+    "plan": "1 Month Personal",
+    "category": "AI",
+    "official_price": {
+      "currency": "BDT",
+      "duration": "Month",
+      "amount": 3050
+    },
+    "our_price": {
+      "currency": "BDT",
+      "amount": 2350
+    },
+    "saved_amount": {
+      "currency": "BDT",
+      "amount": 700
+    },
+    "image": "/logos/claude.png",
+    "how_to_get": "Share your email.\nGet Invitation, Join & Switch Workspace.",
+    "remarks": "30 Days Warranty\n\nHigher Usage Limits than Claude Pro\nClaude Code + Claude Cowork\nMicrosoft 365, Slack & more integrations\nEnterprise Privacy (No training on your data)\nPriority Access & Latest Claude Models\n\nRenew before expiration to keep chat history (inform us at least 1 week earlier)",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Popular"
+  },
+  {
+    "id": "48",
     "slug": "chatgpt-1m-renew-personal",
     "name": "ChatGPT Plus (Renewable)",
     "plan": "1 Month Personal",
@@ -1222,7 +1248,7 @@
     "status": "Popular"
   },
   {
-    "id": "48",
+    "id": "49",
     "slug": "chatgpt-business-1m-account",
     "name": "ChatGPT Business",
     "plan": "1 Month Personal",
@@ -1244,32 +1270,6 @@
     "how_to_get": "Share your email.\nGet Invitation, Join & Switch Workspace.",
     "remarks": "ChatGPT Business/Team Invitation\n\nBusiness gives \nabout 2× more messages \n(≈100 per 3 hours) than \nPlus (≈40–80 per 3 hours)\n\nEnterprise-grade privacy \n(your data is never used \nto train models)\n\nPlease note: if the workspace is deactivated after 1 month, previous chat history will no longer be available.\n25 days warranty",
     "stock_status": "out_of_stock",
-    "visible": true,
-    "status": "Popular"
-  },
-  {
-    "id": "49",
-    "slug": "claude-team-1-month-personal",
-    "name": "Claude Team",
-    "plan": "1 Month Personal",
-    "category": "AI",
-    "official_price": {
-      "currency": "BDT",
-      "duration": "Month",
-      "amount": 3050
-    },
-    "our_price": {
-      "currency": "BDT",
-      "amount": 2350
-    },
-    "saved_amount": {
-      "currency": "BDT",
-      "amount": 700
-    },
-    "image": "/logos/claude.png",
-    "how_to_get": "Share your email.\nGet Invitation, Join & Switch Workspace.",
-    "remarks": "30 Days Warranty\n\nHigher Usage Limits than Claude Pro\nClaude Code + Claude Cowork\nMicrosoft 365, Slack & more integrations\nEnterprise Privacy (No training on your data)\nPriority Access & Latest Claude Models\n\nRenew before expiration to keep chat history (inform us at least 1 week earlier)",
-    "stock_status": "in_stock",
     "visible": true,
     "status": "Popular"
   },
