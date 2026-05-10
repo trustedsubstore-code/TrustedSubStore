@@ -575,7 +575,7 @@
     "id": "23",
     "slug": "elevenlabs-creator-3m",
     "name": "ElevenLabs Creator",
-    "plan": "3 Months",
+    "plan": "3 Months | 1 Month",
     "category": "AI",
     "official_price": {
       "currency": "BDT",
@@ -592,7 +592,7 @@
     },
     "image": "/logos/elevenlabs.png",
     "how_to_get": "Share your ElevenLabs login details.",
-    "remarks": "AI credit 110000 per month.",
+    "remarks": "AI credit 110000 per month.\n\nAsk about 1 Month Pricing",
     "stock_status": "in_stock",
     "visible": true,
     "status": "Available"
