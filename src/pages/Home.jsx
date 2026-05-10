@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useProducts } from '../hooks/useProducts';
 import ProductGrid from '../components/ui/ProductGrid';
 import ProductCard from '../components/ui/ProductCard';
@@ -13,6 +13,16 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
   const [category, setCategory] = useState('All');
   const [sortOption, setSortOption] = useState('default');
+
+  useEffect(() => {
+    const handleReset = () => {
+      setSearchQuery('');
+      setCategory('All');
+      setSortOption('default');
+    };
+    window.addEventListener('reset-home-state', handleReset);
+    return () => window.removeEventListener('reset-home-state', handleReset);
+  }, []);
 
   const categories = useMemo(() => {
     const cats = new Set(products.map(p => p.category));

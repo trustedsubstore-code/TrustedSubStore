@@ -19,12 +19,22 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed top-0 w-full h-16 glass z-40 flex items-center px-4 md:px-8 justify-between">
-        <Link to="/" className="text-xl font-bold text-brand-600 tracking-tight flex items-center gap-2 flex-shrink-0 z-10">
+        <Link 
+          to="/" 
+          onClick={() => window.dispatchEvent(new Event('reset-home-state'))}
+          className="text-xl font-bold text-brand-600 tracking-tight flex items-center gap-2 flex-shrink-0 z-10"
+        >
           <img src="/logo.png" alt="TSS Logo" className="h-8 object-contain" />
           <span className="hidden sm:block whitespace-nowrap">Trusted Sub Store</span>
         </Link>
         <nav className="hidden md:flex gap-5 lg:gap-8 items-center flex-1 justify-center px-2">
-          <Link to="/" className={cn("font-medium transition-colors hover:text-brand-600", isActive('/') ? "text-brand-600" : "text-slate-600")}>Products</Link>
+          <Link 
+            to="/" 
+            onClick={() => window.dispatchEvent(new Event('reset-home-state'))}
+            className={cn("font-medium transition-colors hover:text-brand-600", isActive('/') ? "text-brand-600" : "text-slate-600")}
+          >
+            Products
+          </Link>
           <Link to="/how-it-works" className={cn("font-medium transition-colors hover:text-brand-600", isActive('/how-it-works') ? "text-brand-600" : "text-slate-600")}>How it Works</Link>
           <Link to="/contact" className={cn("font-medium transition-colors hover:text-brand-600", isActive('/contact') ? "text-brand-600" : "text-slate-600")}>Contact</Link>
           <Link to="/resell" className={cn("font-medium transition-colors hover:text-brand-600", isActive('/resell') ? "text-brand-600" : "text-slate-600")}>Resell</Link>
