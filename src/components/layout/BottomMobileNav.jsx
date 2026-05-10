@@ -7,7 +7,11 @@ export default function BottomMobileNav() {
 
   return (
     <nav className="fixed bottom-0 w-full h-16 glass md:hidden z-50 flex items-center justify-around border-t border-slate-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] bg-white">
-      <NavLink to="/" className={getLinkClasses}>
+      <NavLink 
+        to="/" 
+        onClick={() => window.dispatchEvent(new Event('reset-home-state'))}
+        className={getLinkClasses}
+      >
         <Home size={20} />
         <span className="text-[10px] mt-1">Home</span>
       </NavLink>

@@ -14,7 +14,7 @@ export default function FilterChips({ categories, activeCategory, onSelect }) {
       {categories.map(cat => (
         <button
           key={cat}
-          onClick={() => onSelect(cat)}
+          onClick={() => onSelect(activeCategory === cat ? 'All' : cat)}
           className={`whitespace-nowrap px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all duration-200 ${
             activeCategory === cat 
               ? 'bg-brand-600 text-white shadow-md shadow-brand-500/25 ring-1 ring-brand-600' 
