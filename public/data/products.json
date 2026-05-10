@@ -1,9 +1,9 @@
 [
   {
     "id": "1",
-    "slug": "google-package-1-1y",
-    "name": "Google - Drive 2TB + Gemini AI + NotebookLM",
-    "plan": "P1: 1/1.5 Year",
+    "slug": "google-drive-2tb-gemini-ai-notebooklm-12-months-p1-1-year",
+    "name": "Google - Drive 2TB + Gemini AI + NotebookLM - 12 Months",
+    "plan": "P1: 1 Year",
     "category": "AI",
     "official_price": {
       "currency": "BDT",
@@ -27,6 +27,32 @@
   },
   {
     "id": "2",
+    "slug": "google-drive-2tb-gemini-ai-notebooklm-18-months-p1-1-5-year",
+    "name": "Google - Drive 2TB + Gemini AI + NotebookLM - 18 Months",
+    "plan": "P1: 1.5 Year",
+    "category": "AI",
+    "official_price": {
+      "currency": "BDT",
+      "duration": "Year",
+      "amount": 30000
+    },
+    "our_price": {
+      "currency": "BDT",
+      "amount": 4450
+    },
+    "saved_amount": {
+      "currency": "BDT",
+      "amount": 25550
+    },
+    "image": "/logos/google.png",
+    "how_to_get": "Share your Gmail. \nGet invitation and Join.",
+    "remarks": "Account on own email\n\n2 TB storage for Photos, Drive, and Gmail\nGemini 3.1 Pro with limited Veo 3.1 access\n1,000 monthly AI credits + higher NotebookLM access\nGemini in Gmail, Docs, Sheets and Slides",
+    "stock_status": "in_stock",
+    "visible": true,
+    "status": "Popular"
+  },
+  {
+    "id": "3",
     "slug": "google-package-2-1y",
     "name": "Google - Meet + Drive 2TB + Gemini AI + NotebookLM",
     "plan": "P2: 1 Year",
@@ -52,7 +78,7 @@
     "status": "Available"
   },
   {
-    "id": "3",
+    "id": "4",
     "slug": "google-package-3-1y",
     "name": "Google - Antigravity + Drive 2TB + Gemini AI + NotebookLM",
     "plan": "P3: 1 Year",
@@ -78,7 +104,7 @@
     "status": "Popular"
   },
   {
-    "id": "4",
+    "id": "5",
     "slug": "google-package-4-monthly",
     "name": "Google - Youtube + Drive 2TB + Gemini AI + Meet + NotebookLM",
     "plan": "P1: 1 Month",
@@ -104,7 +130,7 @@
     "status": "Available"
   },
   {
-    "id": "5",
+    "id": "6",
     "slug": "youtube-premium-1y",
     "name": "YouTube Premium",
     "plan": "1 Year",
@@ -130,7 +156,7 @@
     "status": "Popular"
   },
   {
-    "id": "6",
+    "id": "7",
     "slug": "canva-premium-edu-ai-1y",
     "name": "Canva Premium Edu with AI - 1 Year | 3 Years",
     "plan": "1 Year",
@@ -156,7 +182,7 @@
     "status": "Popular"
   },
   {
-    "id": "7",
+    "id": "8",
     "slug": "chatgpt-plus-1m",
     "name": "ChatGPT Plus (1 Month Account)",
     "plan": "1 Month",
@@ -182,7 +208,7 @@
     "status": "Available"
   },
   {
-    "id": "8",
+    "id": "9",
     "slug": "datacamp-ai-ml-data-science-1y",
     "name": "DataCamp - AI ML Data Science",
     "plan": "1 Year",
@@ -208,7 +234,7 @@
     "status": "Available"
   },
   {
-    "id": "9",
+    "id": "10",
     "slug": "github-copilot-pro-student-2y",
     "name": "GitHub Copilot Pro",
     "plan": "2 Years",
@@ -234,7 +260,7 @@
     "status": "Trending"
   },
   {
-    "id": "10",
+    "id": "11",
     "slug": "edx-personal-1y",
     "name": "edX Personal",
     "plan": "1 Year",
@@ -260,7 +286,7 @@
     "status": "Available"
   },
   {
-    "id": "11",
+    "id": "12",
     "slug": "pluralsight-premium-6m",
     "name": "Pluralsight Premium",
     "plan": "6 Months",
@@ -286,7 +312,7 @@
     "status": "Available"
   },
   {
-    "id": "12",
+    "id": "13",
     "slug": "consensus-pro-1m",
     "name": "Consensus Pro",
     "plan": "1 Month",
@@ -312,7 +338,7 @@
     "status": "Available"
   },
   {
-    "id": "13",
+    "id": "14",
     "slug": "grammarly-pro-6m",
     "name": "Grammarly Pro - 6 Months | 1 Year",
     "plan": "6 Months",
@@ -338,7 +364,7 @@
     "status": "Available"
   },
   {
-    "id": "14",
+    "id": "15",
     "slug": "microsoft-365-online-desktop-1y",
     "name": "Microsoft 365 Online + Desktop 100GB OneDrive + Copilot",
     "plan": "1 Year",
@@ -364,7 +390,7 @@
     "status": "Available"
   },
   {
-    "id": "15",
+    "id": "16",
     "slug": "capcut-pro-6m",
     "name": "CapCut Pro - 1 Month | 6 Months | 1 Year",
     "plan": "6 Months",
@@ -390,7 +416,7 @@
     "status": "Popular"
   },
   {
-    "id": "16",
+    "id": "17",
     "slug": "makecom-premium-teams-1y",
     "name": "Make.com Premium Teams",
     "plan": "1 Year",
@@ -416,7 +442,7 @@
     "status": "Available"
   },
   {
-    "id": "17",
+    "id": "18",
     "slug": "ipvanish-essential-1y",
     "name": "IPVanish VPN Essential",
     "plan": "1 Year",
@@ -442,7 +468,7 @@
     "status": "Available"
   },
   {
-    "id": "18",
+    "id": "19",
     "slug": "elevenlabs-creator-3m",
     "name": "ElevenLabs Creator",
     "plan": "3 Months",
@@ -468,7 +494,7 @@
     "status": "Available"
   },
   {
-    "id": "19",
+    "id": "20",
     "slug": "bolt-pro-1y",
     "name": "Bolt.new Pro",
     "plan": "1 Year",
@@ -494,7 +520,7 @@
     "status": "Available"
   },
   {
-    "id": "20",
+    "id": "21",
     "slug": "freepik-pro-1m",
     "name": "Freepik Premium Plus - 45K AI Credits",
     "plan": "12 Months",
@@ -520,7 +546,7 @@
     "status": "Available"
   },
   {
-    "id": "21",
+    "id": "22",
     "slug": "surfshark-one-12m",
     "name": "Surfshark One - 12 Months+",
     "plan": "12 Months",
@@ -546,7 +572,7 @@
     "status": "Available"
   },
   {
-    "id": "22",
+    "id": "23",
     "slug": "n8n-self-hosted-1m",
     "name": "n8n Self Hosted Community Edition",
     "plan": "1 Month",
@@ -572,7 +598,7 @@
     "status": "Popular"
   },
   {
-    "id": "23",
+    "id": "24",
     "slug": "warp-ai-pro-1y",
     "name": "Warp AI Pro",
     "plan": "1 Year",
@@ -598,7 +624,7 @@
     "status": "Available"
   },
   {
-    "id": "24",
+    "id": "25",
     "slug": "jetbrains-product-pack-12m",
     "name": "JetBrains Product Pack",
     "plan": "12 Months",
@@ -624,7 +650,7 @@
     "status": "Available"
   },
   {
-    "id": "25",
+    "id": "26",
     "slug": "truecaller-premium-1y",
     "name": "Truecaller Premium",
     "plan": "1 Year",
@@ -650,7 +676,7 @@
     "status": "Available"
   },
   {
-    "id": "26",
+    "id": "27",
     "slug": "rezi-ai-lifetime",
     "name": "Rezi AI",
     "plan": "Lifetime",
@@ -676,7 +702,7 @@
     "status": "Available"
   },
   {
-    "id": "27",
+    "id": "28",
     "slug": "blinkist-pay-per-book",
     "name": "Blinkist",
     "plan": "Pay Per Book",
@@ -702,7 +728,7 @@
     "status": "Available"
   },
   {
-    "id": "28",
+    "id": "29",
     "slug": "linkedin-learning-1y",
     "name": "LinkedIn Learning",
     "plan": "1 Year",
@@ -728,7 +754,7 @@
     "status": "Available"
   },
   {
-    "id": "29",
+    "id": "30",
     "slug": "autodesk-premium-access-1y",
     "name": "Autodesk Premium Access",
     "plan": "1 Year",
@@ -754,7 +780,7 @@
     "status": "Available"
   },
   {
-    "id": "30",
+    "id": "31",
     "slug": "duolingo-super-1y",
     "name": "Duolingo Super",
     "plan": "1 Year",
@@ -780,7 +806,7 @@
     "status": "Available"
   },
   {
-    "id": "31",
+    "id": "32",
     "slug": "notion-business-3m",
     "name": "Notion Business",
     "plan": "3 Months",
@@ -806,7 +832,7 @@
     "status": "Available"
   },
   {
-    "id": "32",
+    "id": "33",
     "slug": "adobe-creative-cloud-premium-1y",
     "name": "Adobe Creative Cloud Premium",
     "plan": "1 Year",
@@ -832,7 +858,7 @@
     "status": "Available"
   },
   {
-    "id": "33",
+    "id": "34",
     "slug": "coursera-premium-1y",
     "name": "Coursera Premium Subscription",
     "plan": "1 Year",
@@ -858,7 +884,7 @@
     "status": "Popular"
   },
   {
-    "id": "34",
+    "id": "35",
     "slug": "linkedin-business-1y-voucher",
     "name": "LinkedIn Business",
     "plan": "1 Year",
@@ -884,7 +910,7 @@
     "status": "New Arrival"
   },
   {
-    "id": "35",
+    "id": "36",
     "slug": "linkedin-sales-navigator-2m",
     "name": "LinkedIn Sales Navigator",
     "plan": "2 Months",
@@ -910,7 +936,7 @@
     "status": "Available"
   },
   {
-    "id": "36",
+    "id": "37",
     "slug": "linkedin-premium-career-3m",
     "name": "LinkedIn Premium Career",
     "plan": "3 Months",
@@ -936,7 +962,7 @@
     "status": "Trending"
   },
   {
-    "id": "37",
+    "id": "38",
     "slug": "figma-edu-plan-1y",
     "name": "Figma Edu Plan",
     "plan": "1 Year",
@@ -962,7 +988,7 @@
     "status": "Available"
   },
   {
-    "id": "38",
+    "id": "39",
     "slug": "columbia-machine-learning-i-lifetime",
     "name": "Machine Learning I - Columbia University Certification",
     "plan": "Lifetime",
@@ -988,7 +1014,7 @@
     "status": "Available"
   },
   {
-    "id": "39",
+    "id": "40",
     "slug": "columbia-learning-ai-through-visualization-lifetime",
     "name": "Learning AI Through Visualization - Columbia University Certification",
     "plan": "Lifetime",
@@ -1014,7 +1040,7 @@
     "status": "Available"
   },
   {
-    "id": "40",
+    "id": "41",
     "slug": "columbia-prompt-engineering-programming-openai-lifetime",
     "name": "Prompt Engineering & Programming with OpenAI - Columbia University Certification",
     "plan": "Lifetime",
@@ -1040,7 +1066,7 @@
     "status": "Available"
   },
   {
-    "id": "41",
+    "id": "42",
     "slug": "super-grok-readymade-1m",
     "name": "Super Grok",
     "plan": "1 Month",
@@ -1052,11 +1078,11 @@
     },
     "our_price": {
       "currency": "BDT",
-      "amount": 950
+      "amount": 1200
     },
     "saved_amount": {
       "currency": "BDT",
-      "amount": 2710
+      "amount": 2460
     },
     "image": "/logos/grok.png",
     "how_to_get": "Seperate/Readymade Account for 1 month will be provided \n(Mail, Password & 2FA Code)",
@@ -1066,7 +1092,7 @@
     "status": "New Arrival"
   },
   {
-    "id": "42",
+    "id": "43",
     "slug": "nordvpn-3m-readymade",
     "name": "NordVPN",
     "plan": "3 Months",
@@ -1092,7 +1118,7 @@
     "status": "New Arrival"
   },
   {
-    "id": "43",
+    "id": "44",
     "slug": "expressvpn-1m-readymade",
     "name": "ExpressVPN",
     "plan": "1 Month",
@@ -1118,7 +1144,7 @@
     "status": "New Arrival"
   },
   {
-    "id": "44",
+    "id": "45",
     "slug": "gamma-ai-pro-1m-readymade",
     "name": "Gamma AI Pro",
     "plan": "1 Month",
@@ -1144,7 +1170,7 @@
     "status": "New Arrival"
   },
   {
-    "id": "45",
+    "id": "46",
     "slug": "openart-ai-essential-1m-readymade",
     "name": "OpenArt AI Essential",
     "plan": "1 Month",
@@ -1170,7 +1196,7 @@
     "status": "New Arrival"
   },
   {
-    "id": "46",
+    "id": "47",
     "slug": "kling-ai-3000-credits-1m-readymade",
     "name": "Kling AI",
     "plan": "3000 Credits / 1 Month",
@@ -1196,7 +1222,7 @@
     "status": "New Arrival"
   },
   {
-    "id": "47",
+    "id": "48",
     "slug": "claude-team-1-month-personal",
     "name": "Claude Team",
     "plan": "1 Month Personal",
@@ -1222,7 +1248,7 @@
     "status": "Popular"
   },
   {
-    "id": "48",
+    "id": "49",
     "slug": "chatgpt-1m-renew-personal",
     "name": "ChatGPT Plus (Renewable)",
     "plan": "1 Month Personal",
@@ -1248,7 +1274,7 @@
     "status": "Popular"
   },
   {
-    "id": "49",
+    "id": "50",
     "slug": "chatgpt-business-1m-account",
     "name": "ChatGPT Business",
     "plan": "1 Month Personal",
@@ -1274,7 +1300,7 @@
     "status": "Popular"
   },
   {
-    "id": "50",
+    "id": "51",
     "slug": "replit-core-1y",
     "name": "Replit Core",
     "plan": "1 Year",
@@ -1300,7 +1326,7 @@
     "status": "Available"
   },
   {
-    "id": "51",
+    "id": "52",
     "slug": "linkedin-premium-career-1y",
     "name": "LinkedIn Premium Career",
     "plan": "1 Year",
@@ -1326,7 +1352,7 @@
     "status": "New Arrival"
   },
   {
-    "id": "52",
+    "id": "53",
     "slug": "super-grok-active-1m",
     "name": "Super Grok Active",
     "plan": "1 Month",
@@ -1352,7 +1378,7 @@
     "status": "New Arrival"
   },
   {
-    "id": "53",
+    "id": "54",
     "slug": "linkedin-premium-sales-navigator-1y",
     "name": "LinkedIn Premium Sales Navigator",
     "plan": "1 Year",
